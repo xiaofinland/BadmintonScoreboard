@@ -10,14 +10,14 @@ import android.widget.EditText;
 /**
  * Created by xiao on 26/06/2015.
  */
-public class DoubleReg extends Activity implements View.OnClickListener {
+public class DoubleReg extends Activity {
 
     EditText playerA1Name;
     EditText playerA2Name;
     EditText playerB1Name;
     EditText playerB2Name;
 
-    Button btnDoubleStart;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +28,15 @@ public class DoubleReg extends Activity implements View.OnClickListener {
         playerB1Name = (EditText) findViewById(R.id.nameB1);
         playerB2Name = (EditText) findViewById(R.id.nameB2);
 
-        btnDoubleStart = (Button) findViewById(R.id.double_start_button);
-        btnDoubleStart.setOnClickListener(this);
+    }
+    public void singleReg(View view) {
+        Intent singleRegisterForm = new Intent(this, MainActivity.class);
+
+        startActivity(singleRegisterForm);
     }
 
-    @Override
-    public void onClick(View v) {
-        Intent startDoubleGame = new Intent(this, SingleScore.class);
+    public void startDouble(View view) {
+        Intent startDoubleGame = new Intent(this, DoubleScore.class);
         startDoubleGame.putExtra("playerA1",playerA1Name.getText().toString());
         startDoubleGame.putExtra("playerB1",playerB1Name.getText().toString());
         startDoubleGame.putExtra("playerA2",playerA2Name.getText().toString());

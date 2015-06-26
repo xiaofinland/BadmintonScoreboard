@@ -29,10 +29,9 @@ public class MainActivity extends Activity {
           }
 
     public void doubleRegister(View view) {
-        Intent startSingleGame = new Intent(this, SingleScore.class);
-        startSingleGame.putExtra("playerA", playerAName.getText().toString());
-        startSingleGame.putExtra("playerB",playerBName.getText().toString());
-        startActivity(startSingleGame);
+        Intent doubleRegisterForm = new Intent(this, DoubleReg.class);
+
+        startActivity(doubleRegisterForm);
     }
     public void startSingle(View view) {
         Intent startSingleGame = new Intent(this, SingleScore.class);
