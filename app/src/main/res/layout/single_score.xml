@@ -21,7 +21,18 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-
+            <TextView
+                android:id="@+id/playerA_set_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="sans-serif-light"
+                android:background="#ff17a9ff"
+                android:textAllCaps="true"
+                android:text="0"
+                android:textColor="#000000"/>
             <TextView
                 android:id="@+id/playerA_name_text_view"
                 android:layout_width="wrap_content"
@@ -95,6 +106,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:text=":"
+                android:textColor="#000000"
+                android:textAllCaps="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
                 android:text="vs"
                 android:textAllCaps="true" />
@@ -115,7 +134,18 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-
+            <TextView
+                android:id="@+id/playerB_set_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="sans-serif-light"
+                android:background="#ff17a9ff"
+                android:textAllCaps="true"
+                android:text="0"
+                android:textColor="#000000"/>
             <TextView
                 android:id="@+id/playerB_name_text_view"
                 android:layout_width="wrap_content"

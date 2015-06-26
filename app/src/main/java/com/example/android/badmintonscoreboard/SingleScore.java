@@ -28,6 +28,10 @@ public class SingleScore extends Activity {
     Button netB;
     Button clearB;
     Button oppoB;
+    int winnerB;
+    int winnerA;
+    String playerAName;
+    String playerBName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +45,8 @@ public class SingleScore extends Activity {
         playerBView = (TextView) findViewById(R.id.playerB_name_text_view);
 
         Intent startSingleGame = getIntent();
-        String playerAName = startSingleGame.getStringExtra("playerA");
-        String playerBName = startSingleGame.getStringExtra("playerB");
+        playerAName = startSingleGame.getStringExtra("playerA");
+        playerBName = startSingleGame.getStringExtra("playerB");
 
         playerAView.setText(playerAName);
         playerBView.setText(playerBName);
@@ -56,6 +60,7 @@ public class SingleScore extends Activity {
         displayA(scoreA);
         // show winner name when score is 30
         if (scoreA == maxScore) {
+            winnerA = 1;
             winnerATextView = (TextView) findViewById(R.id.winner_name_text_view);
             Intent startSingleGame = getIntent();
             String playerAName = startSingleGame.getStringExtra("playerA");
@@ -82,6 +87,7 @@ public class SingleScore extends Activity {
 
             //show winner name when score is 21 or higher but less than 30
         } else if (scoreA >= nomScore && scoreA - scoreB >= 2) {
+            winnerA = 1;
             winnerATextView = (TextView) findViewById(R.id.winner_name_text_view);
             Intent startSingleGame = getIntent();
             String playerAName = startSingleGame.getStringExtra("playerA");
@@ -116,10 +122,11 @@ public class SingleScore extends Activity {
         displayB(scoreB);
         // show winner name when score is 30
         if (scoreB == maxScore) {
+            winnerB = 1;
             winnerBTextView = (TextView) findViewById(R.id.winner_name_text_view);
             Intent startSingleGame = getIntent();
             String playerBName = startSingleGame.getStringExtra("playerB");
-            winnerBTextView.setText(playerBName + " win this set");
+            winnerBTextView.setText(playerBName + " wins this set");
             //stops score when reaches 30 by disable buttons
             smashA = (Button) findViewById(R.id.button_smash_A);
             smashA.setEnabled(false);
@@ -139,10 +146,11 @@ public class SingleScore extends Activity {
             oppoB.setEnabled(false);
             //show winner name when score is 21 or higher but less than 30
         } else if (scoreB >= nomScore && scoreB - scoreA >= 2) {
+            winnerB = 1;
             winnerBTextView = (TextView) findViewById(R.id.winner_name_text_view);
             Intent startSingleGame = getIntent();
             String playerBName = startSingleGame.getStringExtra("playerB");
-            winnerBTextView.setText(playerBName + " win this set");
+            winnerBTextView.setText(playerBName + " wins this set");
 
             //stops score when reaches 21 but less than 30 by disable buttons
             smashA = (Button) findViewById(R.id.button_smash_A);
@@ -211,8 +219,17 @@ public class SingleScore extends Activity {
         oppoB = (Button) findViewById(R.id.button_opponent_B);
         oppoB.setEnabled(true);
     }
-    public void startNext(View view) {
+    public void nextSet(View view) {
         Intent singleNext = new Intent(this,SingleScore2.class);
+       // if (winnerA == 1 && winnerB != 1){
+         //   singleNext.putExtra("winA1",1);
+         //   singleNext.putExtra("winB1",0);
+         //  }else if (winnerB == 1 && winnerA != 1){
+         //   singleNext.putExtra("winA1",0);
+         //   singleNext.putExtra("winB1",1);
+       // }
+        singleNext.putExtra("playerA",playerAName);
+        singleNext.putExtra("playerB",playerBName);
         startActivity(singleNext);
     }
     public void startOver(View view){
