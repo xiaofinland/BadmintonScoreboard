@@ -40,7 +40,7 @@
                 android:layout_marginBottom="40dp"
                 android:text="Single Game"
                 android:id="@+id/button_single_game"
-                android:onClick="singleRegister"
+
                 android:textAllCaps="true"
                 android:background="#FF9800"
                 />
