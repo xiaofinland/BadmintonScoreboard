@@ -8,9 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * Created by xiao on 24/06/2015.
+ * Created by xiao on 26/06/2015.
  */
-public class SingleScore extends Activity {
+public class SingleScore3 extends Activity {
 
     int scoreA = 0;
     int scoreB = 0;
@@ -32,7 +32,7 @@ public class SingleScore extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.single_score);
+        setContentView(R.layout.single_score_3);
         /**
          * This method diplays the fetched player A name value on the screen.
          */
@@ -211,16 +211,11 @@ public class SingleScore extends Activity {
         oppoB = (Button) findViewById(R.id.button_opponent_B);
         oppoB.setEnabled(true);
     }
-    public void startNext(View view) {
-        Intent singleNext = new Intent(this,SingleScore2.class);
-        startActivity(singleNext);
-    }
+
     public void startOver(View view){
         Intent startOver = new Intent(this, MainActivity.class);
 
         startActivity(startOver);
     }
+
 }
-
-
-

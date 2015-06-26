@@ -19,6 +19,12 @@
         <activity android:name=".SingleScore"
             android:label="Single Scoreboard"
             android:theme="@style/AppTheme" />
+        <activity android:name=".SingleScore2"
+            android:label="Single Scoreboard"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".SingleScore3"
+            android:label="Single Scoreboard"
+            android:theme="@style/AppTheme" />
         <activity android:name=".DoubleReg"
             android:label="Double Register"
             android:theme="@style/AppTheme" />

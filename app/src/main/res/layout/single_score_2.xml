@@ -189,42 +189,42 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:textSize="28sp" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_alignParentBottom="true"
-    >
-    <Button
-        android:id="@+id/single_reset_button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="0dp"
-        android:background="#ffbfff16"
-        android:onClick="reset"
-        android:text="Reset" />
-    <Button
-        android:id="@+id/single_next_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginBottom="0dp"
-        android:layout_marginRight="5dp"
-        android:background="#ffbfff16"
-        android:onClick="nextSet"
-        android:text="Start next set" />
-    <Button
-        android:id="@+id/single_startover_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_margin="0dp"
-        android:background="#ffbfff16"
-        android:onClick="startOver"
-        android:text="Start over" />
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/single_reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="0dp"
+            android:background="#ffbfff16"
+            android:onClick="reset"
+            android:text="Reset" />
+        <Button
+            android:id="@+id/single_next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="5dp"
+            android:background="#ffbfff16"
+            android:onClick="nextSet"
+            android:text="Start next set" />
+        <Button
+            android:id="@+id/single_startover_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="0dp"
+            android:background="#ffbfff16"
+            android:onClick="startOver"
+            android:text="Start over" />
 
-</LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>
