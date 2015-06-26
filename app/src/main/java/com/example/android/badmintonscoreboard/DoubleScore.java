@@ -21,7 +21,7 @@ public class DoubleScore extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.single_score);
+        setContentView(R.layout.double_score);
         /**
          * This method displays the fetched team A& B palyers' name value on the screen.
          */
