@@ -120,7 +120,7 @@ public class SingleScore extends Activity {
     private void gameWinnerA() {
         winnerATextView = (TextView) findViewById(R.id.winner_name_text_view);
         Intent startSingleGame = getIntent();
-        String playerAName = startSingleGame.getStringExtra("playerA");
+        playerAName = startSingleGame.getStringExtra("playerA");
         winnerATextView.setText(winnerA + " : " + winnerB + "   " + playerAName + " wins this game");
         next = (Button) findViewById(R.id.single_next_button);
         next.setEnabled(false);
@@ -132,7 +132,7 @@ public class SingleScore extends Activity {
     private void gameWinnerB() {
         winnerBTextView = (TextView) findViewById(R.id.winner_name_text_view);
         Intent startSingleGame = getIntent();
-        String playerBName = startSingleGame.getStringExtra("playerB");
+        playerBName = startSingleGame.getStringExtra("playerB");
         winnerBTextView.setText(winnerB + " : " + winnerA + "   " + playerBName + " wins this game");
         next = (Button) findViewById(R.id.single_next_button);
         next.setEnabled(false);

@@ -10,6 +10,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/main_score_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -20,29 +21,39 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-
-
+            <TextView
+                android:id="@+id/playerA_set_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="sans-serif-light"
+                android:background="#ff17a9ff"
+                android:textAllCaps="true"
+                android:text="0"
+                android:textColor="#000000"/>
             <TextView
                 android:id="@+id/playerA1_name_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:textSize="20sp"
                 android:background="#ff17a9ff"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textSize="20sp" />
             <TextView
                 android:id="@+id/playerA2_name_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:textSize="20sp"
                 android:background="#ff17a9ff"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/teamA_score_text_view"
+                android:id="@+id/playerA_score_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -54,40 +65,44 @@
                 android:textSize="46sp" />
 
             <Button
+                android:id="@+id/button_smash_A"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
+                android:background="#FF9800"
                 android:onClick="scoreA"
-                android:text="Win by smash"
-                android:background="#FF9800"/>
+                android:text="Win by smash" />
 
             <Button
+                android:id="@+id/button_net_A"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:onClick="scoreA"
-                android:text="Win by net"
                 android:layout_marginBottom="5dp"
-                android:background="#FF9800"/>
+                android:background="#FF9800"
+                android:onClick="scoreA"
+                android:text="Win by net" />
 
             <Button
+                android:id="@+id/button_clear_A"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:onClick="scoreA"
-                android:text="Win by clear"
                 android:layout_marginBottom="5dp"
-                android:background="#FF9800"/>
+                android:background="#FF9800"
+                android:onClick="scoreA"
+                android:text="Win by clear" />
 
             <Button
+                android:id="@+id/button_opponent_A"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:onClick="scoreA"
-                android:text="Win by opponent unforced error"
                 android:layout_marginBottom="5dp"
-                android:background="#FF9800"/>
+                android:background="#FF9800"
+                android:onClick="scoreA"
+                android:text="Win by opponent unforced error" />
 
         </LinearLayout>
 
@@ -95,14 +110,23 @@
             android:layout_width="20dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text=":"
+                android:textColor="#000000"
+                android:textAllCaps="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="25dp"
                 android:text="vs"
                 android:textAllCaps="true" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -119,29 +143,39 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-
-
+            <TextView
+                android:id="@+id/playerB_set_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="sans-serif-light"
+                android:background="#ff17a9ff"
+                android:textAllCaps="true"
+                android:text="0"
+                android:textColor="#000000"/>
             <TextView
                 android:id="@+id/playerB1_name_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:textSize="20sp"
                 android:background="#ff17a9ff"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textSize="20sp" />
             <TextView
                 android:id="@+id/playerB2_name_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:textSize="20sp"
                 android:background="#ff17a9ff"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/teamB_score_text_view"
+                android:id="@+id/playerB_score_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -153,53 +187,92 @@
                 android:textSize="46sp" />
 
             <Button
+                android:id="@+id/button_smash_B"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:onClick="scoreB"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
+                android:onClick="scoreB"
                 android:text="Win by smash" />
 
             <Button
+                android:id="@+id/button_net_B"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:onClick="scoreB"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
+                android:onClick="scoreB"
                 android:text="Win by net" />
 
             <Button
+                android:id="@+id/button_clear_B"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:onClick="scoreB"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
+                android:onClick="scoreB"
                 android:text="Win by clear" />
 
             <Button
+                android:id="@+id/button_opponent_B"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:onClick="scoreB"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
+                android:onClick="scoreB"
                 android:text="Win by opponent unforced error" />
 
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/single_reset_button"
+    <TextView
+        android:id="@+id/winner_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/main_score_view"
         android:layout_centerHorizontal="true"
-        android:layout_margin="0dp"
-        android:onClick="reset"
+        android:layout_marginTop="10dp"
+        android:textSize="28sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/single_reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="0dp"
+            android:background="#ffbfff16"
+            android:onClick="reset"
+            android:text="Reset" />
+        <Button
+            android:id="@+id/single_next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="5dp"
+            android:background="#ffbfff16"
+            android:onClick="nextSet"
+            android:text="Start next set" />
+        <Button
+            android:id="@+id/single_startover_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="0dp"
+            android:background="#ffbfff16"
+            android:onClick="startOver"
+            android:text="Start over" />
 
-        android:background="#ffbfff16"
-        android:text="Reset" />
+    </LinearLayout>
+
 </RelativeLayout>
