@@ -28,10 +28,11 @@ public class SingleScore extends Activity {
     Button netB;
     Button clearB;
     Button oppoB;
-    int winnerB;
-    int winnerA;
+    int winnerB = 0;
+    int winnerA = 0;
     String playerAName;
     String playerBName;
+    Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,9 @@ public class SingleScore extends Activity {
 
         playerAView.setText(playerAName);
         playerBView.setText(playerBName);
+
+        //next = (Button) findViewById(R.id.single_next_button);
+        //next.setEnabled(false);
     }
 
     /**
@@ -60,58 +64,25 @@ public class SingleScore extends Activity {
         displayA(scoreA);
         // show winner name when score is 30
         if (scoreA == maxScore) {
-            winnerA = 1;
-            winnerATextView = (TextView) findViewById(R.id.winner_name_text_view);
-            Intent startSingleGame = getIntent();
-            String playerAName = startSingleGame.getStringExtra("playerA");
-            winnerATextView.setText(playerAName + " win this set");
-
-            //stops score when reaches 30 by disable buttons
-            smashA = (Button) findViewById(R.id.button_smash_A);
-            smashA.setEnabled(false);
-            smashB = (Button) findViewById(R.id.button_smash_B);
-            smashB.setEnabled(false);
-            netA = (Button) findViewById(R.id.button_net_A);
-            netA.setEnabled(false);
-            netB = (Button) findViewById(R.id.button_net_B);
-            netB.setEnabled(false);
-            clearA = (Button) findViewById(R.id.button_clear_A);
-            clearA.setEnabled(false);
-            clearB = (Button) findViewById(R.id.button_clear_B);
-            clearB.setEnabled(false);
-            oppoA = (Button) findViewById(R.id.button_opponent_A);
-            oppoA.setEnabled(false);
-            oppoB = (Button) findViewById(R.id.button_opponent_B);
-            oppoB.setEnabled(false);
-
-
-            //show winner name when score is 21 or higher but less than 30
+            winnerA = winnerA + 1;
+            if (winnerA == 2) {
+                gameWinnerA();
+                disButton();
+            } else {
+                //stops score when reaches 30 by disable buttons
+                disButton();
+                //show winner name when score is 21 or higher but less than 30
+            }
         } else if (scoreA >= nomScore && scoreA - scoreB >= 2) {
-            winnerA = 1;
-            winnerATextView = (TextView) findViewById(R.id.winner_name_text_view);
-            Intent startSingleGame = getIntent();
-            String playerAName = startSingleGame.getStringExtra("playerA");
-            winnerATextView.setText(playerAName + " win this set");
+            winnerA = winnerA + 1;
+            if (winnerA == 2) {
+                gameWinnerA();
+                disButtonGame();
+            } else {
+                disButton();
+            }
 
-            //stops score when reaches 21 but less than 30 by disable buttons
-            smashA = (Button) findViewById(R.id.button_smash_A);
-            smashA.setEnabled(false);
-            smashB = (Button) findViewById(R.id.button_smash_B);
-            smashB.setEnabled(false);
-            netA = (Button) findViewById(R.id.button_net_A);
-            netA.setEnabled(false);
-            netB = (Button) findViewById(R.id.button_net_B);
-            netB.setEnabled(false);
-            clearA = (Button) findViewById(R.id.button_clear_A);
-            clearA.setEnabled(false);
-            clearB = (Button) findViewById(R.id.button_clear_B);
-            clearB.setEnabled(false);
-            oppoA = (Button) findViewById(R.id.button_opponent_A);
-            oppoA.setEnabled(false);
-            oppoB = (Button) findViewById(R.id.button_opponent_B);
-            oppoB.setEnabled(false);
         }
-
     }
 
     /**
@@ -122,54 +93,49 @@ public class SingleScore extends Activity {
         displayB(scoreB);
         // show winner name when score is 30
         if (scoreB == maxScore) {
-            winnerB = 1;
-            winnerBTextView = (TextView) findViewById(R.id.winner_name_text_view);
-            Intent startSingleGame = getIntent();
-            String playerBName = startSingleGame.getStringExtra("playerB");
-            winnerBTextView.setText(playerBName + " wins this set");
+            winnerB = winnerB + 1;
+            if (winnerB == 2) {
+                gameWinnerB();
+                disButton();
+            } else {
+                disButton();
+            }
             //stops score when reaches 30 by disable buttons
-            smashA = (Button) findViewById(R.id.button_smash_A);
-            smashA.setEnabled(false);
-            smashB = (Button) findViewById(R.id.button_smash_B);
-            smashB.setEnabled(false);
-            netA = (Button) findViewById(R.id.button_net_A);
-            netA.setEnabled(false);
-            netB = (Button) findViewById(R.id.button_net_B);
-            netB.setEnabled(false);
-            clearA = (Button) findViewById(R.id.button_clear_A);
-            clearA.setEnabled(false);
-            clearB = (Button) findViewById(R.id.button_clear_B);
-            clearB.setEnabled(false);
-            oppoA = (Button) findViewById(R.id.button_opponent_A);
-            oppoA.setEnabled(false);
-            oppoB = (Button) findViewById(R.id.button_opponent_B);
-            oppoB.setEnabled(false);
+            disButton();
             //show winner name when score is 21 or higher but less than 30
         } else if (scoreB >= nomScore && scoreB - scoreA >= 2) {
-            winnerB = 1;
-            winnerBTextView = (TextView) findViewById(R.id.winner_name_text_view);
-            Intent startSingleGame = getIntent();
-            String playerBName = startSingleGame.getStringExtra("playerB");
-            winnerBTextView.setText(playerBName + " wins this set");
-
-            //stops score when reaches 21 but less than 30 by disable buttons
-            smashA = (Button) findViewById(R.id.button_smash_A);
-            smashA.setEnabled(false);
-            smashB = (Button) findViewById(R.id.button_smash_B);
-            smashB.setEnabled(false);
-            netA = (Button) findViewById(R.id.button_net_A);
-            netA.setEnabled(false);
-            netB = (Button) findViewById(R.id.button_net_B);
-            netB.setEnabled(false);
-            clearA = (Button) findViewById(R.id.button_clear_A);
-            clearA.setEnabled(false);
-            clearB = (Button) findViewById(R.id.button_clear_B);
-            clearB.setEnabled(false);
-            oppoA = (Button) findViewById(R.id.button_opponent_A);
-            oppoA.setEnabled(false);
-            oppoB = (Button) findViewById(R.id.button_opponent_B);
-            oppoB.setEnabled(false);
+            winnerB = winnerB + 1;
+            if (winnerB == 2) {
+                gameWinnerB();
+                disButtonGame();
+            } else {
+                disButton();
+            }
         }
+    }
+
+    /**
+     * This method displays game winner A name and set score value on the screen.
+     */
+    private void gameWinnerA() {
+        winnerATextView = (TextView) findViewById(R.id.winner_name_text_view);
+        Intent startSingleGame = getIntent();
+        String playerAName = startSingleGame.getStringExtra("playerA");
+        winnerATextView.setText(winnerA + " : " + winnerB + "   " + playerAName + " wins this game");
+        next = (Button) findViewById(R.id.single_next_button);
+        next.setEnabled(false);
+    }
+
+    /**
+     * This method displays game winner B name and set score value on the screen.
+     */
+    private void gameWinnerB() {
+        winnerBTextView = (TextView) findViewById(R.id.winner_name_text_view);
+        Intent startSingleGame = getIntent();
+        String playerBName = startSingleGame.getStringExtra("playerB");
+        winnerBTextView.setText(winnerB + " : " + winnerA + "   " + playerBName + " wins this game");
+        next = (Button) findViewById(R.id.single_next_button);
+        next.setEnabled(false);
     }
 
     /**
@@ -191,6 +157,24 @@ public class SingleScore extends Activity {
     }
 
     /**
+     * This method displays the given player A set value on the screen.
+     */
+    private void displaySetA(int number) {
+        TextView setATextView = (TextView) findViewById(
+                R.id.playerA_set_text_view);
+        setATextView.setText("" + number);
+    }
+
+    /**
+     * This method displays the given player B set value on the screen.
+     */
+    private void displaySetB(int number) {
+        TextView setBTextView = (TextView) findViewById(
+                R.id.playerB_set_text_view);
+        setBTextView.setText("" + number);
+    }
+
+    /**
      * reset score,winner name, buttons .
      */
     public void reset(View view) {
@@ -198,10 +182,76 @@ public class SingleScore extends Activity {
         scoreB = 0;
         displayA(scoreA);
         displayB(scoreB);
-        winnerATextView = (TextView) findViewById(R.id.winner_name_text_view);
-        winnerATextView.setVisibility(View.GONE);
-        winnerBTextView = (TextView) findViewById(R.id.winner_name_text_view);
-        winnerBTextView.setVisibility(View.GONE);
+        enButton();
+    }
+
+    public void nextSet(View view) {
+
+        displaySetA(winnerA);
+        displaySetB(winnerB);
+        scoreA = 0;
+        scoreB = 0;
+        displayA(scoreA);
+        displayB(scoreB);
+        enButton();
+    }
+
+    public void startOver(View view) {
+        Intent startOver = new Intent(this, MainActivity.class);
+
+        startActivity(startOver);
+    }
+
+    /**
+     * This method disables score buttons. When set is finished, no additional score can be added.
+     */
+    private void disButton() {
+        smashA = (Button) findViewById(R.id.button_smash_A);
+        smashA.setEnabled(false);
+        smashB = (Button) findViewById(R.id.button_smash_B);
+        smashB.setEnabled(false);
+        netA = (Button) findViewById(R.id.button_net_A);
+        netA.setEnabled(false);
+        netB = (Button) findViewById(R.id.button_net_B);
+        netB.setEnabled(false);
+        clearA = (Button) findViewById(R.id.button_clear_A);
+        clearA.setEnabled(false);
+        clearB = (Button) findViewById(R.id.button_clear_B);
+        clearB.setEnabled(false);
+        oppoA = (Button) findViewById(R.id.button_opponent_A);
+        oppoA.setEnabled(false);
+        oppoB = (Button) findViewById(R.id.button_opponent_B);
+        oppoB.setEnabled(false);
+    }
+
+    /**
+     * This method disables score buttons and next button. When game is finished, no additional score can be added.
+     */
+    private void disButtonGame() {
+        smashA = (Button) findViewById(R.id.button_smash_A);
+        smashA.setEnabled(false);
+        smashB = (Button) findViewById(R.id.button_smash_B);
+        smashB.setEnabled(false);
+        netA = (Button) findViewById(R.id.button_net_A);
+        netA.setEnabled(false);
+        netB = (Button) findViewById(R.id.button_net_B);
+        netB.setEnabled(false);
+        clearA = (Button) findViewById(R.id.button_clear_A);
+        clearA.setEnabled(false);
+        clearB = (Button) findViewById(R.id.button_clear_B);
+        clearB.setEnabled(false);
+        oppoA = (Button) findViewById(R.id.button_opponent_A);
+        oppoA.setEnabled(false);
+        oppoB = (Button) findViewById(R.id.button_opponent_B);
+        oppoB.setEnabled(false);
+        next = (Button) findViewById(R.id.single_next_button);
+        next.setEnabled(false);
+    }
+
+    /**
+     * This method enables score buttons back. When new set starts
+     */
+    private void enButton() {
         smashA = (Button) findViewById(R.id.button_smash_A);
         smashA.setEnabled(true);
         smashB = (Button) findViewById(R.id.button_smash_B);
@@ -218,24 +268,6 @@ public class SingleScore extends Activity {
         oppoA.setEnabled(true);
         oppoB = (Button) findViewById(R.id.button_opponent_B);
         oppoB.setEnabled(true);
-    }
-    public void nextSet(View view) {
-        Intent singleNext = new Intent(this,SingleScore2.class);
-       // if (winnerA == 1 && winnerB != 1){
-         //   singleNext.putExtra("winA1",1);
-         //   singleNext.putExtra("winB1",0);
-         //  }else if (winnerB == 1 && winnerA != 1){
-         //   singleNext.putExtra("winA1",0);
-         //   singleNext.putExtra("winB1",1);
-       // }
-        singleNext.putExtra("playerA",playerAName);
-        singleNext.putExtra("playerB",playerBName);
-        startActivity(singleNext);
-    }
-    public void startOver(View view){
-        Intent startOver = new Intent(this, MainActivity.class);
-
-        startActivity(startOver);
     }
 }
 

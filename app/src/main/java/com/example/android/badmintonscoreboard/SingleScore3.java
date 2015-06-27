@@ -119,7 +119,7 @@ public class SingleScore3 extends Activity {
             winnerBTextView = (TextView) findViewById(R.id.winner_name_text_view);
             Intent startSingleGame = getIntent();
             String playerBName = startSingleGame.getStringExtra("playerB");
-            winnerBTextView.setText(playerBName + " win this set");
+            winnerBTextView.setText(playerBName + " wins this set");
             //stops score when reaches 30 by disable buttons
             smashA = (Button) findViewById(R.id.button_smash_A);
             smashA.setEnabled(false);
@@ -142,7 +142,7 @@ public class SingleScore3 extends Activity {
             winnerBTextView = (TextView) findViewById(R.id.winner_name_text_view);
             Intent startSingleGame = getIntent();
             String playerBName = startSingleGame.getStringExtra("playerB");
-            winnerBTextView.setText(playerBName + " win this set");
+            winnerBTextView.setText(playerBName + " wins this set");
 
             //stops score when reaches 21 but less than 30 by disable buttons
             smashA = (Button) findViewById(R.id.button_smash_A);
