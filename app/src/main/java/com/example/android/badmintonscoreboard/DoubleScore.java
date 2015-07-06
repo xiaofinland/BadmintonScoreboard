@@ -3,8 +3,10 @@ package com.example.android.badmintonscoreboard;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 /**
@@ -37,11 +39,18 @@ public class DoubleScore extends Activity {
     String playerB1Name;
     String playerB2Name;
     Button next;
+    Chronometer chronometer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.double_score);
+        /**
+         * This method starts clock when the activity starts.
+         */
+        chronometer = (Chronometer) findViewById(R.id.clock);
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        chronometer.start();
         /**
          * This method displays the fetched team A& B palyers' name value on the screen.
          */
@@ -74,6 +83,7 @@ public class DoubleScore extends Activity {
             if (winnerA == 2) {
                 gameWinnerA();
                 disButton();
+                chronometer.stop();
             } else {
                 //stops score when reaches 30 by disable buttons
                 disButton();
@@ -84,6 +94,7 @@ public class DoubleScore extends Activity {
             if (winnerA == 2) {
                 gameWinnerA();
                 disButtonGame();
+                chronometer.stop();
             } else {
                 disButton();
             }
@@ -103,6 +114,7 @@ public class DoubleScore extends Activity {
             if (winnerB == 2) {
                 gameWinnerB();
                 disButton();
+                chronometer.stop();
             } else {
                 disButton();
             }
@@ -114,6 +126,7 @@ public class DoubleScore extends Activity {
             if (winnerB == 2) {
                 gameWinnerB();
                 disButtonGame();
+                chronometer.stop();
             } else {
                 disButton();
             }
@@ -154,6 +167,7 @@ public class DoubleScore extends Activity {
                 R.id.playerA_score_text_view);
         playerATextView.setText("" + number);
     }
+
 
     /**
      * This method displays the given player B score value on the screen.
@@ -205,6 +219,7 @@ public class DoubleScore extends Activity {
     }
 
     public void startOver(View view) {
+        chronometer.stop();
         Intent startOver = new Intent(this, MainActivity.class);
 
         startActivity(startOver);
