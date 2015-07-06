@@ -80,6 +80,7 @@ public class DoubleScore extends Activity {
         // show winner name when score is 30
         if (scoreA == maxScore) {
             winnerA = winnerA + 1;
+            displaySetA(winnerA);
             if (winnerA == 2) {
                 gameWinnerA();
                 disButton();
@@ -91,6 +92,7 @@ public class DoubleScore extends Activity {
             }
         } else if (scoreA >= nomScore && scoreA - scoreB >= 2) {
             winnerA = winnerA + 1;
+            displaySetA(winnerA);
             if (winnerA == 2) {
                 gameWinnerA();
                 disButtonGame();
@@ -111,6 +113,7 @@ public class DoubleScore extends Activity {
         // show winner name when score is 30
         if (scoreB == maxScore) {
             winnerB = winnerB + 1;
+            displaySetB(winnerB);
             if (winnerB == 2) {
                 gameWinnerB();
                 disButton();
@@ -123,6 +126,7 @@ public class DoubleScore extends Activity {
             //show winner name when score is 21 or higher but less than 30
         } else if (scoreB >= nomScore && scoreB - scoreA >= 2) {
             winnerB = winnerB + 1;
+            displaySetB(winnerB);
             if (winnerB == 2) {
                 gameWinnerB();
                 disButtonGame();
@@ -209,8 +213,7 @@ public class DoubleScore extends Activity {
 
     public void nextSet(View view) {
 
-        displaySetA(winnerA);
-        displaySetB(winnerB);
+
         scoreA = 0;
         scoreB = 0;
         displayA(scoreA);
