@@ -19,8 +19,8 @@
         <activity android:name=".SingleScore"
             android:label="Single Scoreboard"
             android:theme="@style/AppTheme" />
-        <activity android:name=".SingleScore2"
-            android:label="Single Scoreboard"
+        <activity android:name=".Statistics"
+            android:label="Statistics"
             android:theme="@style/AppTheme" />
         <activity android:name=".SingleScore3"
             android:label="Single Scoreboard"

@@ -73,7 +73,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
-                android:onClick="scoreA"
+                android:onClick="smashA"
                 android:text="Win by smash" />
 
             <Button
@@ -241,7 +241,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="1dp"
         android:layout_marginBottom="0dp"
         android:background="#ffbfff16"
         android:onClick="reset"
@@ -252,19 +252,29 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_marginBottom="0dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="1dp"
         android:background="#ffbfff16"
         android:onClick="nextSet"
-        android:text="Start next set" />
+        android:text="next set" />
     <Button
         android:id="@+id/single_startover_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_margin="0dp"
+        android:layout_marginRight="1dp"
         android:background="#ffbfff16"
         android:onClick="startOver"
         android:text="Start over" />
+    <Button
+        android:id="@+id/statistic_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="0dp"
+        android:background="#ffbfff16"
+        android:onClick="statistics"
+        android:text="Statistics" />
 
 </LinearLayout>
 

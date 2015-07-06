@@ -31,11 +31,18 @@ public class SingleScore extends Activity {
     Button clearB;
     Button oppoB;
     int winnerB = 0;
-    int winnerA = 0;
+    int winnerA = 0; // player A's winning sets
     String playerAName;
     String playerBName;
     Button next;
     Chronometer chronometer;
+    int smashWinA = 0;
+    int smashSetWinA1 = 0;
+    int smashSetWinA2 = 0;
+    int smashSetWinA3 = 0;
+    int netWinA = 0;
+    int clearWinA = 0;
+    int oppWinA = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,10 +73,21 @@ public class SingleScore extends Activity {
         //next.setEnabled(false);
     }
 
+    public void smashA (View view) {
+        scoreA();
+        smashWinA = smashWinA + 1;
+        if (winnerA == 0 && winnerB == 0) {
+            smashSetWinA1 = smashWinA;
+        } else if (winnerA == 1 || winnerB == 1) {
+            smashSetWinA2 = smashWinA;
+        } else  {
+            smashSetWinA3 = smashWinA;
+        }
+    }
     /**
      * This method is called when the score A button is clicked.
      */
-    public void scoreA(View view) {
+    public void scoreA () {
         scoreA = scoreA + 1;
         displayA(scoreA);
         // show winner name when score is 30
@@ -203,7 +221,9 @@ public class SingleScore extends Activity {
         displayB(scoreB);
         enButton();
     }
-
+    /**
+     * start next set
+     */
     public void nextSet(View view) {
 
         scoreA = 0;
@@ -212,14 +232,27 @@ public class SingleScore extends Activity {
         displayB(scoreB);
         enButton();
     }
-
+    /**
+            * start over from beginning
+    */
     public void startOver(View view) {
         chronometer.stop();
         Intent startOver = new Intent(this, MainActivity.class);
 
         startActivity(startOver);
     }
-
+    /**
+     * Veiw game statistics
+     */
+    public void statistics(View view) {
+        Intent statistics = new Intent(this, Statistics.class);
+        statistics.putExtra("playerA",playerAName);
+        statistics.putExtra("playerB",playerBName);
+        //statistics.putExtra("smashSetA1", smashSetWinA1);
+        //statistics.putExtra("smashSetA2",smashSetWinA2);
+        //statistics.putExtra("smashSetA3",smashSetWinA3);
+        startActivity(statistics);
+    }
     /**
      * This method disables score buttons. When set is finished, no additional score can be added.
      */

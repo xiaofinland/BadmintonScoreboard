@@ -40,6 +40,13 @@ public class DoubleScore extends Activity {
     String playerB2Name;
     Button next;
     Chronometer chronometer;
+    int smashWinA = 0;
+    int smashSetWinA1 = 0;
+    int smashSetWinA2 = 0;
+    int smashSetWinA3 = 0;
+    int netWinA = 0;
+    int clearWinA = 0;
+    int oppWinA = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +78,7 @@ public class DoubleScore extends Activity {
         playerA2View.setText(playerA2Name);
         playerB2View.setText(playerB2Name);
     }
+
     /**
      * This method is called when the score A button is clicked.
      */
