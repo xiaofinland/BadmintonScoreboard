@@ -3,8 +3,10 @@ package com.example.android.badmintonscoreboard;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 /**
@@ -33,13 +35,21 @@ public class SingleScore extends Activity {
     String playerAName;
     String playerBName;
     Button next;
+    Chronometer chronometer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.single_score);
+    /**
+    * This method starts clock when the activity starts.
+    */
+        chronometer = (Chronometer) findViewById(R.id.clock);
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        chronometer.start();
+
         /**
-         * This method diplays the fetched player A name value on the screen.
+         * This method displays the fetched player A name value on the screen.
          */
 
         playerAView = (TextView) findViewById(R.id.playerA_name_text_view);
@@ -68,6 +78,7 @@ public class SingleScore extends Activity {
             if (winnerA == 2) {
                 gameWinnerA();
                 disButton();
+                chronometer.stop();
             } else {
                 //stops score when reaches 30 by disable buttons
                 disButton();
@@ -78,6 +89,7 @@ public class SingleScore extends Activity {
             if (winnerA == 2) {
                 gameWinnerA();
                 disButtonGame();
+                chronometer.stop();
             } else {
                 disButton();
             }
@@ -97,6 +109,7 @@ public class SingleScore extends Activity {
             if (winnerB == 2) {
                 gameWinnerB();
                 disButton();
+                chronometer.stop();
             } else {
                 disButton();
             }
@@ -108,6 +121,7 @@ public class SingleScore extends Activity {
             if (winnerB == 2) {
                 gameWinnerB();
                 disButtonGame();
+                chronometer.stop();
             } else {
                 disButton();
             }
@@ -197,6 +211,7 @@ public class SingleScore extends Activity {
     }
 
     public void startOver(View view) {
+        chronometer.stop();
         Intent startOver = new Intent(this, MainActivity.class);
 
         startActivity(startOver);
