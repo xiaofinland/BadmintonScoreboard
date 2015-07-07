@@ -83,7 +83,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
-                android:onClick="scoreA"
+                android:onClick="netA"
                 android:text="Win by net" />
 
             <Button
@@ -93,7 +93,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
-                android:onClick="scoreA"
+                android:onClick="clearA"
                 android:text="Win by clear" />
 
             <Button
@@ -103,7 +103,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
-                android:onClick="scoreA"
+                android:onClick="oppoA"
                 android:text="Win by opponent unforced error" />
 
         </LinearLayout>
@@ -186,7 +186,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
-                android:onClick="scoreB"
+                android:onClick="smashB"
                 android:text="Win by smash" />
 
             <Button
@@ -196,7 +196,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
-                android:onClick="scoreB"
+                android:onClick="netB"
                 android:text="Win by net" />
 
             <Button
@@ -206,7 +206,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
-                android:onClick="scoreB"
+                android:onClick="clearB"
                 android:text="Win by clear" />
 
             <Button
@@ -216,7 +216,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
                 android:background="#FF9800"
-                android:onClick="scoreB"
+                android:onClick="oppoB"
                 android:text="Win by opponent unforced error" />
 
         </LinearLayout>

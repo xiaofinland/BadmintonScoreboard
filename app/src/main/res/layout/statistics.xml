@@ -82,9 +82,11 @@
                 android:text="0"
                 android:id="@+id/stat_setA1_smash"/>
             <TextView
-                android:text="Smash win"/>
+                android:text="Smash win"
+                />
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setB1_smash"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -92,11 +94,13 @@
             <TextView
                 android:text="Net win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setA1_net"/>
             <TextView
-                android:text="net win"/>
+                android:text="Net win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setB1_net"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -104,11 +108,13 @@
             <TextView
                 android:text="Clear win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setA1_clear"/>
             <TextView
                 android:text="Clear win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setB1_clear"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -118,13 +124,15 @@
 
                 android:layout_marginBottom="10dp"/>
             <TextView
-                android:text="xx"
+                android:text="0"
+                android:id="@+id/stat_setA1_oppo"
                 android:layout_marginRight="10dp"/>
             <TextView
                 android:text="Opponent's Error"/>
 
             <TextView
-                android:text="xx"
+                android:text="0"
+                android:id="@+id/stat_setB1_oppo"
                />
         </TableRow>
         <TableRow>
@@ -142,11 +150,13 @@
                 android:text="Smash win"/>
             <TextView
                 android:id="@+id/stat_setA2_smash"
+                android:text="0"
                 />
             <TextView
                 android:text="Smash win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setB2_smash"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -154,11 +164,13 @@
             <TextView
                 android:text="Net win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setA2_net"/>
             <TextView
-                android:text="net win"/>
+                android:text="Net win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setB2_net"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -166,11 +178,13 @@
             <TextView
                 android:text="Clear win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setA2_clear"/>
             <TextView
                 android:text="Clear win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setB2_clear"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -180,13 +194,15 @@
 
                 android:layout_marginBottom="10dp"/>
             <TextView
-                android:text="xx"
+                android:text="0"
+                android:id="@+id/stat_setA2_oppo"
                 android:layout_marginRight="10dp"/>
             <TextView
                 android:text="Opponent's Error"
                />
             <TextView
-                android:text="xx"
+                android:text="0"
+                android:id="@+id/stat_setB2_oppo"
                 />
         </TableRow>
         <TableRow>
@@ -201,14 +217,17 @@
             android:layout_height="match_parent">
             <TextView
 
-                android:text="Smash win"/>
+                android:text="Smash win"
+                />
             <TextView
+                android:text="0"
                 android:id="@+id/stat_setA3_smash"
                 />
             <TextView
                 android:text="Smash win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setB3_smash"/>/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -216,11 +235,13 @@
             <TextView
                 android:text="Net win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setA3_net"/>
             <TextView
-                android:text="net win"/>
+                android:text="Net win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setB3_net"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -228,11 +249,13 @@
             <TextView
                 android:text="Clear win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setA3_clear"/>
             <TextView
                 android:text="Clear win"/>
             <TextView
-                android:text="xx"/>
+                android:text="0"
+                android:id="@+id/stat_setB3_clear"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -241,13 +264,15 @@
                 android:text="Opponent's Error"
                 android:layout_marginRight="10dp"/>
             <TextView
-                android:text="xx"
+                android:text="0"
+                android:id="@+id/stat_setA3_oppo"
                 android:layout_marginRight="50dp"/>
             <TextView
                 android:text="Opponent's Error"
                 android:layout_marginRight="10dp"/>
             <TextView
-                android:text="xx"
+                android:text="0"
+                android:id="@+id/stat_setB3_oppo"
                 android:layout_marginRight="10dp"/>
         </TableRow>
 

@@ -37,12 +37,38 @@ public class SingleScore extends Activity {
     Button next;
     Chronometer chronometer;
     int smashWinA = 0;
+    int smashWinB = 0;
     int smashSetWinA1 = 0;
     int smashSetWinA2 = 0;
     int smashSetWinA3 = 0;
+    int smashSetWinB1 = 0;
+    int smashSetWinB2 = 0;
+    int smashSetWinB3 = 0;
     int netWinA = 0;
+    int netWinB = 0;
+    int netSetWinA1 = 0;
+    int netSetWinA2 = 0;
+    int netSetWinA3 = 0;
+    int netSetWinB1 = 0;
+    int netSetWinB2 = 0;
+    int netSetWinB3 = 0;
     int clearWinA = 0;
-    int oppWinA = 0;
+    int clearWinB = 0;
+    int clearSetWinA1 = 0;
+    int clearSetWinA2 = 0;
+    int clearSetWinA3 = 0;
+    int clearSetWinB1 = 0;
+    int clearSetWinB2 = 0;
+    int clearSetWinB3 = 0;
+    int oppoWinA = 0;
+    int oppoWinB = 0;
+    int oppoSetWinA1 = 0;
+    int oppoSetWinA2 = 0;
+    int oppoSetWinA3 = 0;
+    int oppoSetWinB1 = 0;
+    int oppoSetWinB2 = 0;
+    int oppoSetWinB3 = 0;
+    int gameSet = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +80,7 @@ public class SingleScore extends Activity {
         chronometer = (Chronometer) findViewById(R.id.clock);
         chronometer.setBase(SystemClock.elapsedRealtime());
         chronometer.start();
+
 
         /**
          * This method displays the fetched player A name value on the screen.
@@ -72,20 +99,149 @@ public class SingleScore extends Activity {
         //next = (Button) findViewById(R.id.single_next_button);
         //next.setEnabled(false);
     }
-
+    /**
+     * This method stores smash statistics value for both players.
+     */
     public void smashA (View view) {
+        gameSet = winnerA + winnerB;
         scoreA();
-        smashWinA = smashWinA + 1;
-        if (winnerA == 0 && winnerB == 0) {
-            smashSetWinA1 = smashWinA;
-        } else if (winnerA == 1 || winnerB == 1) {
-            smashSetWinA2 = smashWinA;
-        } else  {
-            smashSetWinA3 = smashWinA;
+        switch (gameSet){
+            case 0:
+                smashSetWinA1 = smashSetWinA1 +1;
+                break;
+            case 1:
+                smashSetWinA2 = smashSetWinA2 +1;
+                break;
+            case 2:
+                smashSetWinA3 = smashSetWinA3 + 1;
+                break;
+            default:
+        }
+    }
+    public void smashB (View view) {
+        gameSet = winnerA + winnerB;
+        scoreB();
+
+        switch (gameSet){
+            case 0:
+                smashSetWinB1 = smashSetWinB1 +1;
+                break;
+            case 1:
+                smashSetWinB2 = smashSetWinB2 +1;
+                break;
+            case 2:
+                smashSetWinB3 = smashSetWinB3 + 1;
+                break;
+            default:
         }
     }
     /**
-     * This method is called when the score A button is clicked.
+     * This method stores net statistics value for both players.
+     */
+    public void netA (View view) {
+        gameSet = winnerA + winnerB;
+        scoreA();
+        switch (gameSet) {
+            case 0:
+                netSetWinA1 = netSetWinA1 + 1;
+                break;
+            case 1:
+                netSetWinA2 = netSetWinA2 + 1;
+                break;
+            case 2:
+                netSetWinA3 = netSetWinA3 + 1;
+                break;
+            default:
+        }
+    }
+    public void netB (View view) {
+        gameSet = winnerA + winnerB;
+        scoreB();
+       switch (gameSet){
+           case 0:
+               netSetWinB1 = netSetWinB1+1;
+               break;
+           case 1:
+               netSetWinB2 = netSetWinB2 +1;
+               break;
+           case 2:
+               netSetWinB3 = netSetWinB3 +1;
+               break;
+           default:
+       }
+    }
+    /**
+     * This method stores Clear statistics value for both players.
+     */
+    public void clearA (View view) {
+        gameSet = winnerA + winnerB;
+        scoreA();
+        switch (gameSet){
+            case 0:
+                clearSetWinA1 = clearSetWinA1 + 1;
+                break;
+            case 1:
+                clearSetWinA2 = clearSetWinA2 + 1;
+                break;
+            case 2:
+                clearSetWinA3 = clearSetWinA3 +1;
+                break;
+            default:
+        }
+    }
+    public void clearB (View view) {
+        gameSet = winnerA + winnerB;
+        scoreB();
+        switch (gameSet){
+            case 0:
+                clearSetWinB1 = clearSetWinB1 + 1;
+                break;
+            case 1:
+                clearSetWinB2 = clearSetWinB2 +1;
+                break;
+            case 2:
+                clearSetWinB3 = clearSetWinB3 + 1;
+                break;
+            default:
+        }
+    }
+    /**
+     * This method stores opponets' unforced error statistics value for both players.
+     */
+    public void oppoA (View view) {
+        gameSet = winnerA + winnerB;
+        scoreA();
+        switch (gameSet){
+            case 0:
+                oppoSetWinA1 = oppoSetWinA1 + 1;
+                break;
+            case 1:
+                oppoSetWinA2 = oppoSetWinA2 + 1;
+                break;
+            case 2:
+                oppoSetWinA3 = oppoSetWinA3 + 1;
+                break;
+            default:
+        }
+    }
+    public void oppoB (View view) {
+        gameSet = winnerA + winnerB;
+        scoreB();
+        switch (gameSet){
+            case 0:
+                oppoSetWinB1 = oppoSetWinB1 + 1;
+                break;
+            case 1:
+                oppoSetWinB2 = oppoSetWinB2 + 1;
+                break;
+            case 2:
+                oppoSetWinB3 = oppoSetWinB3 + 1;
+                break;
+            default:
+        }
+    }
+    /**
+     * This method calculates player A's score..
      */
     public void scoreA () {
         scoreA = scoreA + 1;
@@ -116,12 +272,13 @@ public class SingleScore extends Activity {
             }
 
         }
+
     }
 
     /**
-     * This method is called when the score B button is clicked.
+     * This method calculates player B's score.
      */
-    public void scoreB(View view) {
+    public void scoreB () {
         scoreB = scoreB + 1;
         displayB(scoreB);
         // show winner name when score is 30
@@ -149,6 +306,7 @@ public class SingleScore extends Activity {
                 disButton();
             }
         }
+
     }
 
     /**
@@ -248,9 +406,35 @@ public class SingleScore extends Activity {
         Intent statistics = new Intent(this, Statistics.class);
         statistics.putExtra("playerA",playerAName);
         statistics.putExtra("playerB",playerBName);
-        //statistics.putExtra("smashSetA1", smashSetWinA1);
-        //statistics.putExtra("smashSetA2",smashSetWinA2);
-        //statistics.putExtra("smashSetA3",smashSetWinA3);
+
+        statistics.putExtra("smashSetA1", smashSetWinA1);
+        statistics.putExtra("smashSetA2",smashSetWinA2);
+        statistics.putExtra("smashSetA3",smashSetWinA3);
+        statistics.putExtra("smashSetB1", smashSetWinB1);
+        statistics.putExtra("smashSetB2",smashSetWinB2);
+        statistics.putExtra("smashSetB3",smashSetWinB3);
+
+        statistics.putExtra("netSetA1", netSetWinA1);
+        statistics.putExtra("netSetA2",netSetWinA2);
+        statistics.putExtra("netSetA3",netSetWinA3);
+        statistics.putExtra("netSetB1", netSetWinB1);
+        statistics.putExtra("netSetB2",netSetWinB2);
+        statistics.putExtra("netSetB3",netSetWinB3);
+
+        statistics.putExtra("clearSetA1", clearSetWinA1);
+        statistics.putExtra("clearSetA2",clearSetWinA2);
+        statistics.putExtra("clearSetA3",clearSetWinA3);
+        statistics.putExtra("clearSetB1", clearSetWinB1);
+        statistics.putExtra("clearSetB2",clearSetWinB2);
+        statistics.putExtra("clearSetB3",clearSetWinB3);
+
+        statistics.putExtra("oppoSetA1", oppoSetWinA1);
+        statistics.putExtra("oppoSetA2",oppoSetWinA2);
+        statistics.putExtra("oppoSetA3",oppoSetWinA3);
+        statistics.putExtra("oppoSetB1", oppoSetWinB1);
+        statistics.putExtra("oppoSetB2",oppoSetWinB2);
+        statistics.putExtra("oppoSetB3",oppoSetWinB3);
+
         startActivity(statistics);
     }
     /**
